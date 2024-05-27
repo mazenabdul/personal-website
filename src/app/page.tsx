@@ -1,88 +1,57 @@
 "use client";
 
-import Image from "next/image";
+import Hero from "./components/Hero";
+import { Card } from "@mantine/core";
 import styled from "styled-components";
-import githubIcon from "@/public/Github.svg";
-import linkedinIcon from "@/public/Linkedin.svg";
-import coverImage from "@/public/Hero.svg";
-import { SOCIAL_LINKS } from "@/lib/links";
-import { BREAKPOINTS } from "@/lib/screen";
-import SocialLink from "@/components/SocialLink";
 
-const StyledHeroContainer = styled.section`
+const StyledProjects = styled.div`
+  padding: 48px;
   height: 85%;
-  @media (max-width: ${BREAKPOINTS.Mobile}) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .text-container {
-    @media (min-width: ${BREAKPOINTS.Mobile}) {
-      position: absolute;
-      top: 25%;
-      left: 15%;
-      z-index: 2;
-    }
 
-    .hero-greeting {
-      font-size: 3rem;
-    }
+  .cards-container {
+    width: 100%;
+    height: 85%;
 
-    .name {
-      color: #6c63ff;
-      font-size: 5rem;
-      text-align: center;
-      text-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
+    .card {
+      width: 35%;
+      height: 80%;
 
-      .last-name {
-        color: black;
+      .card-image {
+        height: 65%;
+        margin-bottom: 24px;
+      }
+
+      .card-description {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
       }
     }
   }
+  .
 
-  .hero-image {
-    @media (max-width: ${BREAKPOINTS.Mobile}) {
-      display: none;
-    }
-    position: absolute;
-    top: 10%;
-    left: 45%;
-  }
 `;
-
 export default function Main() {
   return (
-    <StyledHeroContainer>
-      <div className="text-container">
-        <p className="hero-greeting">Hello! 👋🏻 I&apos;m</p>
-        <p className="name">
-          Mazen <span className="last-name">Abdul</span>
-        </p>
-        <p>👨🏻‍💻 Full Stack Software Engineer</p>
-        <p>🌎 Chicago, IL</p>
-        <SocialLink
-          name="Github"
-          imageSrc={githubIcon}
-          linkSrc={SOCIAL_LINKS.Github}
-          width={24}
-          height={24}
-        />
-        <SocialLink
-          name="LinkedIn"
-          imageSrc={linkedinIcon}
-          width={28}
-          height={28}
-          linkSrc={SOCIAL_LINKS.Linkedin}
-        />
+    <>
+      <div style={{ height: "85%" }}>
+        <section id="#hero">
+          <Hero />
+        </section>
       </div>
-      <div className="hero-image">
-        <Image
-          priority
-          style={{ width: "90%" }}
-          alt="hero-image"
-          src={coverImage}
-        />
-      </div>
-    </StyledHeroContainer>
+      <StyledProjects style={{ padding: "48px" }}>
+        <h1>My Projects - </h1>
+        <div className="cards-container">
+          <Card className="card" shadow="lg" radius="lg" withBorder>
+            <Card.Section className="card-image">Image here</Card.Section>
+            <div className="card-description">
+              <Card.Section>List of pills for tech stack</Card.Section>
+              <Card.Section>Description of project here</Card.Section>
+              <Card.Section>Button CTA here</Card.Section>
+            </div>
+          </Card>
+        </div>
+      </StyledProjects>
+    </>
   );
 }
