@@ -2,12 +2,12 @@
 
 import Image from "next/image";
 import styled from "styled-components";
-import githubIcon from "../../public/Github.svg";
-import linkedinIcon from "../../public/Linkedin.svg";
-import coverImage from "../../public/Hero.svg";
-import { SOCIAL_LINKS } from "./lib/links";
-import { BREAKPOINTS } from "./lib/screen";
-import SocialLink from "./components/SocialLink";
+import githubIcon from "@/public/Github.svg";
+import linkedinIcon from "@/public/Linkedin.svg";
+import coverImage from "@/public/Hero.svg";
+import { SOCIAL_LINKS } from "@/lib/links";
+import { BREAKPOINTS } from "@/lib/screen";
+import SocialLink from "@/components/SocialLink";
 
 const StyledHeroContainer = styled.section`
   height: 85%;
