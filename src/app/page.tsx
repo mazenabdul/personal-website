@@ -4,9 +4,6 @@ import styled from "styled-components";
 import coverImage from "../../public/Hero.svg";
 
 const StyledHeroContainer = styled.div`
-  margin-block-start: 0px;
-  margin-block-end: 0px;
-
   .text-container {
     position: absolute;
     top: 25%;
