@@ -10,6 +10,12 @@ import { BREAKPOINTS } from "@/lib/screen";
 import SocialLink from "@/components/SocialLink";
 
 const StyledHeroContainer = styled.div`
+  height: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(108, 99, 255, 1) 0%,
+    rgba(245, 245, 245, 1) 40%
+  );
   @media (max-width: ${BREAKPOINTS.Mobile}) {
     display: flex;
     flex-direction: column-reverse;
