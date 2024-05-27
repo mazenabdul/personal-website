@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "@mantine/core/styles.css";
 import { MantineProvider } from "@mantine/core";
 import "./globals.css";
+import { Delicious_Handrawn } from "next/font/google";
+import StyledRegistry from "./components/StyledRegistry";
 
-const inter = Inter({ subsets: ["latin"] });
+const font = Delicious_Handrawn({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
   title: "👋🏻 I'm Mazen!",
@@ -18,8 +19,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <MantineProvider>{children}</MantineProvider>
+      <body className={font.className}>
+        <StyledRegistry>
+          <MantineProvider>{children}</MantineProvider>
+        </StyledRegistry>
       </body>
     </html>
   );

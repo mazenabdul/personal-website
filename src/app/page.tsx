@@ -1,27 +1,51 @@
 "use client";
+
 import Image from "next/image";
 import styled from "styled-components";
+import githubIcon from "../../public/Github.svg";
+import linkedinIcon from "../../public/Linkedin.svg";
 import coverImage from "../../public/Hero.svg";
+import { SOCIAL_LINKS } from "./lib/links";
+import { BREAKPOINTS } from "./lib/screen";
+import SocialLink from "./components/SocialLink";
 
-const StyledHeroContainer = styled.div`
+const StyledHeroContainer = styled.section`
+  height: 85%;
+  @media (max-width: ${BREAKPOINTS.Mobile}) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .text-container {
-    position: absolute;
-    top: 25%;
-    left: 15%;
+    @media (min-width: ${BREAKPOINTS.Mobile}) {
+      position: absolute;
+      top: 25%;
+      left: 15%;
+      z-index: 2;
+    }
 
     .hero-greeting {
-      font-size: 2rem;
+      font-size: 3rem;
     }
 
     .name {
       color: #6c63ff;
-      font-size: 4rem;
+      font-size: 5rem;
+      text-align: center;
+      text-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
+
+      .last-name {
+        color: black;
+      }
     }
   }
 
   .hero-image {
+    @media (max-width: ${BREAKPOINTS.Mobile}) {
+      display: none;
+    }
     position: absolute;
-    top: 5%;
+    top: 10%;
     left: 45%;
   }
 `;
@@ -30,12 +54,34 @@ export default function Main() {
   return (
     <StyledHeroContainer>
       <div className="text-container">
-        <p className="hero-greeting">Hi there! 👋🏻 I'm</p>
-        <p className="name">Mazen</p>
-        <p>Full Stack Software engineer</p>
+        <p className="hero-greeting">Hello! 👋🏻 I&apos;m</p>
+        <p className="name">
+          Mazen <span className="last-name">Abdul</span>
+        </p>
+        <p>👨🏻‍💻 Full Stack Software Engineer</p>
+        <p>🌎 Chicago, IL</p>
+        <SocialLink
+          name="Github"
+          imageSrc={githubIcon}
+          linkSrc={SOCIAL_LINKS.Github}
+          width={24}
+          height={24}
+        />
+        <SocialLink
+          name="LinkedIn"
+          imageSrc={linkedinIcon}
+          width={28}
+          height={28}
+          linkSrc={SOCIAL_LINKS.Linkedin}
+        />
       </div>
       <div className="hero-image">
-        <Image style={{ width: "90%" }} alt="hero-image" src={coverImage} />
+        <Image
+          priority
+          style={{ width: "90%" }}
+          alt="hero-image"
+          src={coverImage}
+        />
       </div>
     </StyledHeroContainer>
   );
