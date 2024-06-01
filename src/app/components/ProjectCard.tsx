@@ -1,7 +1,11 @@
-import { Badge, Card } from "@mantine/core";
+import { Card } from "@mantine/core";
 import Image from "next/image";
 import heroImage from "@/public/Hero.svg";
 import styled from "styled-components";
+import TechBadge from "./TechBadge";
+import ProjectButtons from "./ProjectButtons";
+import { TProject } from "../types";
+import { BREAKPOINTS } from "@/lib/screen";
 
 type TStyledProps = {
   className?: string;
@@ -13,7 +17,15 @@ type TStyledProps = {
 
 const StyledProjectCard = styled(Card)<TStyledProps>`
   width: 35%;
+  min-height: 510px;
+  max-width: 400px;
   padding: 32px;
+  height: fit-content;
+
+  @media (max-width: ${BREAKPOINTS.Mobile}) {
+    width: 90%;
+    max-width: 90%;
+  }
 
   .card-image {
     display: flex;
@@ -34,6 +46,10 @@ const StyledProjectCard = styled(Card)<TStyledProps>`
       display: flex;
       justify-content: center;
       align-items: center;
+
+      .badge-container {
+        text-align: center;
+      }
     }
 
     .card-tech-label {
@@ -42,40 +58,35 @@ const StyledProjectCard = styled(Card)<TStyledProps>`
   }
 `;
 
-const StyledBadge = styled(Badge)<{
-  color: string;
-  children: string;
-  variant: string;
-}>`
-  margin-right: 4px;
-  margin-left: 4px;
-`;
-
-export default function ProjectCard() {
+export default function ProjectCard({
+  project: { title, demoUrl, description, repoUrl, tech },
+}: {
+  project: TProject;
+}) {
   return (
     <StyledProjectCard shadow="lg" radius="lg" withBorder>
       <Card.Section className="card-image">
         <Image width={200} height={200} src={heroImage} alt="hero" />
       </Card.Section>
       <div className="card-description">
-        <p className="card-title">My Project Title</p>
+        <p className="card-title">{title}</p>
         <Card.Section className="card-tech">
-          <div className="card-tech-badge-container">
-            <StyledBadge color="#6c63ff" variant="filled">
-              TypeScript
-            </StyledBadge>
-            <StyledBadge color="#6c63ff" variant="filled">
-              React
-            </StyledBadge>
-            <StyledBadge color="#6c63ff" variant="filled">
-              Node
-            </StyledBadge>
+          <div className="badge-container">
+            {tech.map((item) => (
+              <TechBadge key={item} name={item} />
+            ))}
           </div>
         </Card.Section>
-        <Card.Section>
-          This is a project that builds a website. It uses Next JS and Node.
+        <Card.Section style={{ textAlign: "center", minHeight: "65px" }}>
+          {description}
         </Card.Section>
-        <Card.Section>Button CTA here</Card.Section>
+        <Card.Section>
+          <ProjectButtons
+            repoUrl={repoUrl}
+            demoUrl={demoUrl}
+            showDemo={!!demoUrl}
+          />
+        </Card.Section>
       </div>
     </StyledProjectCard>
   );
