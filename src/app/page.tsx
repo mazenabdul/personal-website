@@ -10,10 +10,10 @@ export default function Main() {
       <section id="#hero" style={{ height: "100%" }}>
         <Hero />
       </section>
-      <section id="#projects">
+      <section id="projects">
         <Projects />
       </section>
-      <section id="#contact">
+      <section id="contact">
         <Contact />
       </section>
     </>
