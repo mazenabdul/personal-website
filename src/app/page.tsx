@@ -12,7 +12,7 @@ const StyledProjects = styled.div`
     display: flex;
     gap: 24px;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
     width: 100%;
 
     @media (max-width: ${BREAKPOINTS.Mobile}) {

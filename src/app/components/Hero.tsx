@@ -11,6 +11,7 @@ import SocialLink from "@/components/SocialLink";
 
 const StyledHeroContainer = styled.div`
   height: 100%;
+  padding: 48px;
   background: linear-gradient(
     0deg,
     rgba(108, 99, 255, 1) 0%,

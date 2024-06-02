@@ -59,14 +59,22 @@ const StyledProjectCard = styled(Card)<TStyledProps>`
 `;
 
 export default function ProjectCard({
-  project: { title, demoUrl, description, repoUrl, tech },
+  project: { title, demoUrl, description, repoUrl, tech, image },
 }: {
   project: TProject;
 }) {
   return (
     <StyledProjectCard shadow="lg" radius="lg" withBorder>
       <Card.Section className="card-image">
-        <Image width={200} height={200} src={heroImage} alt="hero" />
+        <Image
+          style={{
+            width: "100%",
+            height: "200px",
+            borderRadius: "5px",
+          }}
+          src={image ?? heroImage}
+          alt="hero"
+        />
       </Card.Section>
       <div className="card-description">
         <p className="card-title">{title}</p>
