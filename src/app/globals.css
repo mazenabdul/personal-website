@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth !important;
+}
 body {
     height: 100vh;
     background-color: #f5f5f5;
