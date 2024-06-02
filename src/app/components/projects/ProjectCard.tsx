@@ -4,7 +4,7 @@ import heroImage from "@/public/Hero.svg";
 import styled from "styled-components";
 import TechBadge from "./TechBadge";
 import ProjectButtons from "./ProjectButtons";
-import { TProject } from "../types";
+import { TProject } from "../../types";
 import { BREAKPOINTS } from "@/lib/screen";
 
 type TStyledProps = {

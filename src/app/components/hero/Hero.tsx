@@ -7,7 +7,7 @@ import linkedinIcon from "@/public/Linkedin.svg";
 import coverImage from "@/public/Hero.svg";
 import { SOCIAL_LINKS } from "@/lib/links";
 import { BREAKPOINTS } from "@/lib/screen";
-import SocialLink from "@/components/SocialLink";
+import SocialLink from "@/components/hero/SocialLink";
 
 const StyledHeroContainer = styled.div`
   height: 100%;
