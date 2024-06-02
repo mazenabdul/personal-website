@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import "@mantine/core/styles.css";
 import { MantineProvider } from "@mantine/core";
 import "./globals.css";
-import { Delicious_Handrawn } from "next/font/google";
+import { Barlow } from "next/font/google";
 import StyledRegistry from "./components/StyledRegistry";
 
-const font = Delicious_Handrawn({ subsets: ["latin"], weight: "400" });
+const font = Barlow({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
   title: "👋🏻 I'm Mazen!",

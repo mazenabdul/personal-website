@@ -27,16 +27,25 @@ const StyledHeroContainer = styled.div`
   .text-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+
+    @media (max-width: ${BREAKPOINTS.Mobile}) {
+      align-items: center;
+    }
+
     @media (min-width: ${BREAKPOINTS.Mobile}) {
       position: absolute;
       top: 25%;
-      left: 15%;
+      left: 7%;
       z-index: 2;
     }
 
     .hero-greeting {
       font-size: 3rem;
+
+      @media (max-width: ${BREAKPOINTS.Mobile}) {
+        font-size: 2rem;
+      }
     }
 
     .name {
@@ -44,6 +53,11 @@ const StyledHeroContainer = styled.div`
       font-size: 5rem;
       text-align: center;
       text-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
+      letter-spacing: -2px;
+
+      @media (max-width: ${BREAKPOINTS.Mobile}) {
+        font-size: 3rem;
+      }
 
       .last-name {
         color: black;
