@@ -14,12 +14,11 @@ type TSocialLinkProps = {
 const StyledSocialLink = styled.div`
   cursor: pointer;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  width: fit-content;
+  width: 310px;
 
   p {
-    margin-left: 8px;
+    margin-left: 10px;
   }
 `;
 export default function SocialLink({

@@ -88,20 +88,26 @@ export default function Hero() {
         <p className="name">
           Mazen <span className="last-name">Abdul</span>
         </p>
-        <p>👨🏻‍💻 Full Stack Software Engineer</p>
-        <p>🌎 Chicago, IL</p>
+        <div style={{ display: "flex", minWidth: "310px" }}>
+          <p>👨🏻‍💻</p>
+          <p style={{ marginLeft: "10px" }}>Full Stack Software Engineer</p>
+        </div>
+        <div style={{ display: "flex", minWidth: "310px" }}>
+          <p>🌎</p>
+          <p style={{ marginLeft: "10px" }}>Chicago, IL</p>
+        </div>
         <SocialLink
           name="Github"
           imageSrc={githubIcon}
           linkSrc={SOCIAL_LINKS.Github}
-          width={24}
-          height={24}
+          width={22}
+          height={22}
         />
         <SocialLink
           name="LinkedIn"
           imageSrc={linkedinIcon}
-          width={28}
-          height={28}
+          width={23}
+          height={23}
           linkSrc={SOCIAL_LINKS.Linkedin}
         />
       </div>

@@ -69,7 +69,8 @@ export default function ProjectCard({
         <Image
           style={{
             width: "100%",
-            height: "200px",
+            height: "50%",
+            maxHeight: "200px",
             borderRadius: "5px",
           }}
           src={image ?? heroImage}
