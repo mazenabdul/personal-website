@@ -8,7 +8,7 @@ import Navigation from "./components/nav/Navigation";
 export default function Main() {
   return (
     <>
-      <section id="#nav">
+      <section id="nav">
         <Navigation />
       </section>
       <section id="hero" style={{ height: "100%" }}>
