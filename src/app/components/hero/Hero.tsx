@@ -64,7 +64,10 @@ const StyledHeroContainer = styled.div`
       }
     }
   }
-
+  .hero-bio {
+    display: flex;
+    min-width: 310px;
+  }
   .hero-image {
     margin-top: 16px;
     width: fit-content;
@@ -88,11 +91,11 @@ export default function Hero() {
         <p className="name">
           Mazen <span className="last-name">Abdul</span>
         </p>
-        <div style={{ display: "flex", minWidth: "310px" }}>
+        <div className="hero-bio">
           <p>👨🏻‍💻</p>
           <p style={{ marginLeft: "10px" }}>Full Stack Software Engineer</p>
         </div>
-        <div style={{ display: "flex", minWidth: "310px" }}>
+        <div className="hero-bio">
           <p>🌎</p>
           <p style={{ marginLeft: "10px" }}>Chicago, IL</p>
         </div>

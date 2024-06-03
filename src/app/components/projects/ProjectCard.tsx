@@ -31,6 +31,13 @@ const StyledProjectCard = styled(Card)<TStyledProps>`
     display: flex;
     justify-content: center;
     height: 65%;
+
+    img {
+      width: 100%;
+      height: 50%;
+      max-height: 200px;
+      border-radius: 5px;
+    }
   }
 
   .card-description {
@@ -66,16 +73,7 @@ export default function ProjectCard({
   return (
     <StyledProjectCard shadow="lg" radius="lg" withBorder>
       <Card.Section className="card-image">
-        <Image
-          style={{
-            width: "100%",
-            height: "50%",
-            maxHeight: "200px",
-            borderRadius: "5px",
-          }}
-          src={image ?? heroImage}
-          alt="hero"
-        />
+        <Image src={image ?? heroImage} alt="project-preview" />
       </Card.Section>
       <div className="card-description">
         <p className="card-title">{title}</p>
