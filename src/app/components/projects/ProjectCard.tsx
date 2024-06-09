@@ -17,7 +17,7 @@ type TStyledProps = {
 
 const StyledProjectCard = styled(Card)<TStyledProps>`
   width: 35%;
-  min-height: 510px;
+  min-height: 520px;
   max-width: 400px;
   padding: 32px;
   height: fit-content;
