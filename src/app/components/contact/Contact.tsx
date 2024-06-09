@@ -1,5 +1,6 @@
 import { BREAKPOINTS } from "@/lib/screen";
 import { Button, Paper, TextInput, Textarea } from "@mantine/core";
+import { useState } from "react";
 import styled from "styled-components";
 
 const StyledContactContainer = styled.div`
@@ -34,6 +35,13 @@ const StyledContactContainer = styled.div`
 `;
 
 export default function Contact() {
+  const [formValues, setFormValues] = useState({
+    name: "",
+    email: "",
+    details: "",
+  });
+  const isDisabled = !(!!formValues.name && !!formValues.email);
+
   return (
     <StyledContactContainer>
       <h1>Contact me -</h1>
@@ -46,23 +54,33 @@ export default function Contact() {
               size="md"
               radius="md"
               placeholder="Name"
+              onChange={({ target: { value } }) =>
+                setFormValues({ ...formValues, name: value })
+              }
             />
             <TextInput
               style={{ width: "90%" }}
               size="md"
               radius="md"
               placeholder="Email"
+              onChange={({ target: { value } }) =>
+                setFormValues({ ...formValues, email: value })
+              }
             />
             <Textarea
               minRows={3}
               style={{ width: "90%" }}
               placeholder="Enter any additional details you'd like for me to know :)"
+              onChange={({ target: { value } }) =>
+                setFormValues({ ...formValues, details: value })
+              }
             />
             <Button
               style={{ width: "90%" }}
               variant="filled"
               color="#6c63ff"
               fullWidth
+              disabled={isDisabled}
             >
               Submit
             </Button>
