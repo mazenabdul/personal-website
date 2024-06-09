@@ -8,6 +8,15 @@ import FacialRecognitionBackend from "@/public/SmartBrainBackEnd.jpg";
 
 export const PROJECTS: TProject[] = [
   {
+    title: "This website!",
+    description:
+      "My personal website designed to showcase an overview of my work.",
+    tech: ["Next.js", "Typescript", "Styled Components"],
+    repoUrl: "https://github.com/mazenabdul/personal-website",
+    demoUrl: "",
+    image: undefined,
+  },
+  {
     title: "Github Finder",
     description:
       "A web app allowing you to search, find & display Github profiles & their stats.",
@@ -51,15 +60,5 @@ export const PROJECTS: TProject[] = [
     repoUrl: "https://github.com/mazenabdul/SmartECG-server",
     demoUrl: "",
     image: SmartEcgBackend,
-  },
-
-  {
-    title: "Facial Recogition (Back end)",
-    description:
-      "A Node.Js, Express & MySQL back end powering the Facial Recognition web app.",
-    tech: ["Node.js", "Express", "MySQL"],
-    repoUrl: "https://github.com/mazenabdul/FaceBackEnd",
-    demoUrl: "",
-    image: FacialRecognitionBackend,
   },
 ];
