@@ -1,3 +1,4 @@
+import { RESUME_LINK } from "@/lib/links";
 import { Button, Modal } from "@mantine/core";
 import styled from "styled-components";
 
@@ -11,7 +12,7 @@ along with learning the evolving landscape of web
 development.`;
 
 const RESUME = `
-  For a full look at my previous work & skills, take a look at my resume by clicking the button below:
+  Need a full look at my previous work & skills? Take a look at my resume by clicking the button below:
 `;
 
 const StyledModal = styled(Modal)`
@@ -48,7 +49,12 @@ export default function AboutMeModal({ isOpen, onClose }: TAboutMeModalProps) {
           <p>{RESUME}</p>
         </div>
         <div>
-          <Button color="#6c63ff">View resume</Button>
+          <Button
+            color="#6c63ff"
+            onClick={() => window.open(RESUME_LINK, "_blank")}
+          >
+            View resume
+          </Button>
         </div>
       </div>
     </StyledModal>

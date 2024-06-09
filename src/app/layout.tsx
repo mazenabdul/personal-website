@@ -8,7 +8,7 @@ import StyledRegistry from "./components/StyledRegistry";
 const font = Barlow({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
-  title: "👋🏻 I'm Mazen!",
+  title: "⚡️ Mazen Abdul | Software Engineer",
   description: "Software Engineer Portfolio Website",
 };
 
