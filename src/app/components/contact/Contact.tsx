@@ -3,6 +3,8 @@ import { Button, Paper, TextInput, Textarea } from "@mantine/core";
 import { useState } from "react";
 import styled from "styled-components";
 
+const REQUIRED_FIELD = "This field is required";
+
 const StyledContactContainer = styled.div`
   padding: 32px 48px;
   .contact-container {
@@ -15,7 +17,7 @@ const StyledContactContainer = styled.div`
       display: flex;
       flex-direction: column;
       justify-content: center;
-      height: 400px;
+      height: 500px;
       width: 50%;
       padding: 32px;
 
@@ -34,13 +36,20 @@ const StyledContactContainer = styled.div`
   }
 `;
 
+type TFormData = Record<"name" | "email" | "details", string | null>;
+
 export default function Contact() {
-  const [formValues, setFormValues] = useState({
-    name: "",
-    email: "",
-    details: "",
+  const [formValues, setFormValues] = useState<TFormData>({
+    name: null,
+    email: null,
+    details: null,
   });
   const isDisabled = !(!!formValues.name && !!formValues.email);
+
+  const getErrorMessage = (field: keyof TFormData) =>
+    formValues[field] !== null && formValues[field]?.length === 0
+      ? REQUIRED_FIELD
+      : false;
 
   return (
     <StyledContactContainer>
@@ -50,19 +59,21 @@ export default function Contact() {
           <div className="input-container">
             <p style={{ textAlign: "center" }}>Want to get in touch?</p>
             <TextInput
+              label="Name"
               style={{ width: "90%" }}
               size="md"
               radius="md"
-              placeholder="Name"
+              error={getErrorMessage("name")}
               onChange={({ target: { value } }) =>
                 setFormValues({ ...formValues, name: value })
               }
             />
             <TextInput
+              label="Email"
               style={{ width: "90%" }}
               size="md"
               radius="md"
-              placeholder="Email"
+              error={getErrorMessage("email")}
               onChange={({ target: { value } }) =>
                 setFormValues({ ...formValues, email: value })
               }
