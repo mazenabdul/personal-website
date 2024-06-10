@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import "@mantine/core/styles.css";
 import { MantineProvider } from "@mantine/core";
-import "./globals.css";
 import { Barlow } from "next/font/google";
 import StyledRegistry from "./components/StyledRegistry";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "./globals.css";
 
 const font = Barlow({ subsets: ["latin"], weight: "400" });
 
@@ -21,7 +23,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={font.className}>
         <StyledRegistry>
-          <MantineProvider>{children}</MantineProvider>
+          <MantineProvider>
+            <ToastContainer />
+            {children}
+          </MantineProvider>
         </StyledRegistry>
       </body>
     </html>

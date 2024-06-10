@@ -1,6 +1,7 @@
 import { BREAKPOINTS } from "@/lib/screen";
 import { Button, Paper, TextInput, Textarea } from "@mantine/core";
 import { useState } from "react";
+import { toast } from "react-toastify";
 import styled from "styled-components";
 
 const REQUIRED_FIELD = "This field is required";
@@ -51,6 +52,18 @@ export default function Contact() {
       ? REQUIRED_FIELD
       : false;
 
+  const submitForm = () => {
+    setFormValues({ name: null, email: null, details: null });
+    toast(`Your request has been submitted. I'll be in touch!`, {
+      type: "success",
+      position: "bottom-right",
+      theme: "colored",
+      style: {
+        background: "#6c63ff",
+      },
+    });
+  };
+
   return (
     <StyledContactContainer>
       <h1>Contact me -</h1>
@@ -92,6 +105,7 @@ export default function Contact() {
               color="#6c63ff"
               fullWidth
               disabled={isDisabled}
+              onClick={submitForm}
             >
               Submit
             </Button>
