@@ -2,9 +2,9 @@ import { PROJECTS } from "@/lib/projects";
 import { BREAKPOINTS } from "@/lib/screen";
 import styled from "styled-components";
 import ProjectCard from "./ProjectCard";
+import { SectionTitle } from "../SectionTitle";
 
 const StyledProjects = styled.div`
-  padding: 32px 48px;
   .cards-container {
     display: flex;
     gap: 24px;
@@ -24,7 +24,7 @@ const StyledProjects = styled.div`
 export default function Projects() {
   return (
     <StyledProjects>
-      <h1>My Projects - </h1>
+      <SectionTitle title="Projects" />
       <div className="cards-container">
         {PROJECTS.map((project) => (
           <ProjectCard key={project.title} project={project} />

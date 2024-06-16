@@ -20,7 +20,7 @@ const StyledHeroContainer = styled.div`
   @media (max-width: ${BREAKPOINTS.Mobile}) {
     display: flex;
     flex-direction: column-reverse;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     gap: 24px;
   }

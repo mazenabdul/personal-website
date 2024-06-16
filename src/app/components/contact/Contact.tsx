@@ -3,11 +3,11 @@ import { Button, Paper, TextInput, Textarea } from "@mantine/core";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import styled from "styled-components";
+import { SectionTitle } from "../SectionTitle";
 
 const REQUIRED_FIELD = "This field is required";
 
 const StyledContactContainer = styled.div`
-  padding: 32px 48px;
   .contact-container {
     display: flex;
     flex-direction: column;
@@ -20,7 +20,7 @@ const StyledContactContainer = styled.div`
       justify-content: center;
       height: 500px;
       width: 50%;
-      padding: 32px;
+      padding: 16px;
 
       @media (max-width: ${BREAKPOINTS.Mobile}) {
         width: 100%;
@@ -74,7 +74,7 @@ export default function Contact() {
     >
       <input type="hidden" name="contact-form" value="contact-form" />
       <StyledContactContainer>
-        <h1>Contact me -</h1>
+        <SectionTitle title="Contact" />
         <div className="contact-container">
           <Paper className="form-card" shadow="md" radius="md">
             <div className="input-container">
