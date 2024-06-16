@@ -20,11 +20,11 @@ const StyledProjectCard = styled(Card)<TStyledProps>`
   min-height: 520px;
   max-width: 400px;
   padding: 32px;
-  height: fit-content;
 
   @media (max-width: ${BREAKPOINTS.Mobile}) {
     width: 90%;
     max-width: 90%;
+    min-height: 100%;
   }
 
   .card-image {
@@ -35,6 +35,7 @@ const StyledProjectCard = styled(Card)<TStyledProps>`
     img {
       width: 100%;
       height: 50%;
+      min-height: 200px;
       max-height: 200px;
       border-radius: 5px;
     }
@@ -84,7 +85,7 @@ export default function ProjectCard({
             ))}
           </div>
         </Card.Section>
-        <Card.Section style={{ textAlign: "center", minHeight: "65px" }}>
+        <Card.Section style={{ textAlign: "center", minHeight: "75px" }}>
           {description}
         </Card.Section>
         <Card.Section>

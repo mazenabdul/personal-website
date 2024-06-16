@@ -20,7 +20,7 @@ export const PROJECTS: TProject[] = [
     title: "Github Finder",
     description:
       "A web app allowing you to search, find & display Github profiles & their stats.",
-    tech: ["React", "JavaScript", "Axios", "Netflify"],
+    tech: ["React", "JavaScript", "Axios"],
     repoUrl: "https://github.com/mazenabdul/GithubFinder",
     demoUrl: "https://youthful-austin-44ecaf.netlify.app/",
     image: GithubFinder,
@@ -29,13 +29,13 @@ export const PROJECTS: TProject[] = [
     title: "Admin Panel",
     description:
       "A React/Redux IT logging admin panel with CRUD functionality.",
-    tech: ["React", "Redux", "JavaScript", "Materialize CSS"],
+    tech: ["React", "Redux", "JavaScript"],
     repoUrl: "https://github.com/mazenabdul/AdminPanel",
     demoUrl: "",
     image: AdminPanel,
   },
   {
-    title: "Facial Recogition (Front end)",
+    title: "Facial Recogition",
     description:
       "A full-stack React app allowing you to sign up, upload a picture and automatically detects where the face is.",
     tech: ["React", "Node.js", "Javascript"],
@@ -47,16 +47,16 @@ export const PROJECTS: TProject[] = [
     title: "Sample React/Docker App",
     description:
       "An example React app built with Docker and deployed onto AWS using Github Actions.",
-    tech: ["React", "JavaScript", "Docker", "AWS"],
+    tech: ["React", "Docker", "AWS"],
     repoUrl: "https://github.com/mazenabdul/react-docker-aws",
     demoUrl: "",
     image: ReactDocker,
   },
   {
-    title: "Smart ECG (Back end)",
+    title: "Smart ECG",
     description:
       "A Node JS, Express & MongoDB back end to power the Smart ECG mobile app.",
-    tech: ["Node.js", "JavaScript", "Express", "MongoDB"],
+    tech: ["Node.js", "Express", "MongoDB"],
     repoUrl: "https://github.com/mazenabdul/SmartECG-server",
     demoUrl: "",
     image: SmartEcgBackend,

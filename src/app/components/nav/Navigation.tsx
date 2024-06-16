@@ -35,7 +35,7 @@ export default function Navigation() {
         <p>Contact</p>
       </Link>
       <Link href={""} onClick={() => setOpenModal(true)}>
-        <p>About me</p>
+        <p>About</p>
       </Link>
     </StyledNav>
   );
