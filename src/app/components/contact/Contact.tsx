@@ -68,10 +68,11 @@ export default function Contact() {
   return (
     <form
       onSubmit={submitForm}
-      method="POST"
+      method="post"
       data-netlify="true"
       name="contact-form"
     >
+      <input type="hidden" name="contact-form" value="contact-form" />
       <StyledContactContainer>
         <h1>Contact me -</h1>
         <div className="contact-container">
