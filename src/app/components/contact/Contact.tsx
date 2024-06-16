@@ -65,53 +65,61 @@ export default function Contact() {
   };
 
   return (
-    <StyledContactContainer>
-      <h1>Contact me -</h1>
-      <div className="contact-container">
-        <Paper className="form-card" shadow="md" radius="md">
-          <div className="input-container">
-            <p style={{ textAlign: "center" }}>Want to get in touch?</p>
-            <TextInput
-              label="Name"
-              style={{ width: "90%" }}
-              size="md"
-              radius="md"
-              error={getErrorMessage("name")}
-              onChange={({ target: { value } }) =>
-                setFormValues({ ...formValues, name: value })
-              }
-            />
-            <TextInput
-              label="Email"
-              style={{ width: "90%" }}
-              size="md"
-              radius="md"
-              error={getErrorMessage("email")}
-              onChange={({ target: { value } }) =>
-                setFormValues({ ...formValues, email: value })
-              }
-            />
-            <Textarea
-              minRows={3}
-              style={{ width: "90%" }}
-              placeholder="Enter any additional details you'd like for me to know :)"
-              onChange={({ target: { value } }) =>
-                setFormValues({ ...formValues, details: value })
-              }
-            />
-            <Button
-              style={{ width: "90%" }}
-              variant="filled"
-              color="#6c63ff"
-              fullWidth
-              disabled={isDisabled}
-              onClick={submitForm}
-            >
-              Submit
-            </Button>
-          </div>
-        </Paper>
-      </div>
-    </StyledContactContainer>
+    <form action={submitForm} data-netlify="true" name="contact-form">
+      <StyledContactContainer>
+        <h1>Contact me -</h1>
+        <div className="contact-container">
+          <Paper className="form-card" shadow="md" radius="md">
+            <div className="input-container">
+              <p style={{ textAlign: "center" }}>Want to get in touch?</p>
+              <TextInput
+                name="name"
+                label="Name"
+                style={{ width: "90%" }}
+                size="md"
+                radius="md"
+                error={getErrorMessage("name")}
+                onChange={({ target: { value } }) =>
+                  setFormValues({ ...formValues, name: value })
+                }
+                value={formValues.name || ""}
+              />
+              <TextInput
+                name="email"
+                label="Email"
+                style={{ width: "90%" }}
+                size="md"
+                radius="md"
+                error={getErrorMessage("email")}
+                onChange={({ target: { value } }) =>
+                  setFormValues({ ...formValues, email: value })
+                }
+                value={formValues.email || ""}
+              />
+              <Textarea
+                name="details"
+                minRows={3}
+                style={{ width: "90%" }}
+                placeholder="Enter any additional details you'd like for me to know"
+                onChange={({ target: { value } }) =>
+                  setFormValues({ ...formValues, details: value })
+                }
+                value={formValues.details || ""}
+              />
+              <Button
+                style={{ width: "90%" }}
+                variant="filled"
+                color="#6c63ff"
+                fullWidth
+                disabled={isDisabled}
+                type="submit"
+              >
+                Submit
+              </Button>
+            </div>
+          </Paper>
+        </div>
+      </StyledContactContainer>
+    </form>
   );
 }
