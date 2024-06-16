@@ -52,7 +52,8 @@ export default function Contact() {
       ? REQUIRED_FIELD
       : false;
 
-  const submitForm = () => {
+  const submitForm = (e: React.FormEvent) => {
+    e.preventDefault();
     setFormValues({ name: null, email: null, details: null });
     toast(`Your request has been submitted. I'll be in touch!`, {
       type: "success",
@@ -65,7 +66,12 @@ export default function Contact() {
   };
 
   return (
-    <form action={submitForm} data-netlify="true" name="contact-form">
+    <form
+      onSubmit={submitForm}
+      method="POST"
+      data-netlify="true"
+      name="contact-form"
+    >
       <StyledContactContainer>
         <h1>Contact me -</h1>
         <div className="contact-container">
